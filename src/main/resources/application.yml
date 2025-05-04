@@ -11,8 +11,7 @@ spring:
     listener:
       simple:
         acknowledge-mode: auto
-  
-  
+
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:ggomg
@@ -33,3 +32,7 @@ spring:
   h2:
     console:
       enabled: true
+  
+  config:
+    import:
+      - application-message.yml

@@ -1,0 +1,10 @@
+services:
+  image:
+    ocr:
+      exchange: image.response
+      queue: image.ocr.response.queue
+      routing-key: image.ocr.response
+    validation:
+      exchange: image.response
+      queue: image.validation.response.queue
+      routing-key: image.validation.response
