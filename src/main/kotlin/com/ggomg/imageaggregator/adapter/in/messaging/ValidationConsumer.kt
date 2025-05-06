@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.message
+package com.ggomg.imageaggregator.adapter.`in`.messaging
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.stereotype.Component
