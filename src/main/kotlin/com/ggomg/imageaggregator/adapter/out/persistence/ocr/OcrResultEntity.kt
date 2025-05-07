@@ -1,6 +1,7 @@
-package com.ggomg.imageaggregator.adapter.out.persistence
+package com.ggomg.imageaggregator.adapter.out.persistence.ocr
 
 import com.fasterxml.uuid.Generators
+import com.ggomg.imageaggregator.adapter.out.persistence.BaseEntity
 import com.ggomg.imageaggregator.domain.model.OcrResult
 import jakarta.persistence.Entity
 import jakarta.persistence.Id

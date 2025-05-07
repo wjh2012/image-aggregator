@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.adapter.`in`.messaging
+package com.ggomg.imageaggregator.adapter.`in`.dto
 
 data class OcrResultDto(
     val gid: String,

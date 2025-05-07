@@ -1,7 +1,7 @@
 package com.ggomg.imageaggregator.domain.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.ggomg.imageaggregator.adapter.`in`.messaging.OcrResultDto
+import com.ggomg.imageaggregator.adapter.`in`.dto.OcrResultDto
 import com.ggomg.imageaggregator.domain.model.OcrResult
 import com.ggomg.imageaggregator.domain.port.`in`.OcrResultMessageHandler
 import com.ggomg.imageaggregator.domain.port.out.OcrResultSavePort

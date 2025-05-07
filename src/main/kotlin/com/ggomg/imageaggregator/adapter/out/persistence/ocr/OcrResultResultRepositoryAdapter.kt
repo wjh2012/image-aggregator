@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.adapter.out.persistence
+package com.ggomg.imageaggregator.adapter.out.persistence.ocr
 
 import com.ggomg.imageaggregator.domain.model.OcrResult
 import com.ggomg.imageaggregator.domain.port.out.OcrResultSavePort
