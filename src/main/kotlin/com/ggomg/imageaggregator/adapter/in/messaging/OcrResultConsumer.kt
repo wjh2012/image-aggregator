@@ -1,8 +1,7 @@
 package com.ggomg.imageaggregator.adapter.`in`.messaging
 
-import com.ggomg.imageaggregator.domain.port.`in`.OcrResultMessageHandler
+import com.ggomg.imageaggregator.application.port.`in`.OcrResultMessageHandler
 import org.springframework.amqp.rabbit.annotation.RabbitListener
-import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.stereotype.Component
 
 @Component

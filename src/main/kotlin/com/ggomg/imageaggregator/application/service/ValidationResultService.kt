@@ -1,10 +1,10 @@
-package com.ggomg.imageaggregator.domain.service
+package com.ggomg.imageaggregator.application.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.ggomg.imageaggregator.adapter.`in`.dto.ValidationResultDto
 import com.ggomg.imageaggregator.domain.model.ValidationResult
-import com.ggomg.imageaggregator.domain.port.`in`.ValidationResultMessageHandler
-import com.ggomg.imageaggregator.domain.port.out.ValidationResultSavePort
+import com.ggomg.imageaggregator.application.port.`in`.ValidationResultMessageHandler
+import com.ggomg.imageaggregator.application.port.out.ValidationResultSavePort
 import org.springframework.stereotype.Service
 
 

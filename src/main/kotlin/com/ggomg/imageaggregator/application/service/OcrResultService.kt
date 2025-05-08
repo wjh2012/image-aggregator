@@ -1,10 +1,10 @@
-package com.ggomg.imageaggregator.domain.service
+package com.ggomg.imageaggregator.application.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.ggomg.imageaggregator.adapter.`in`.dto.OcrResultDto
 import com.ggomg.imageaggregator.domain.model.OcrResult
-import com.ggomg.imageaggregator.domain.port.`in`.OcrResultMessageHandler
-import com.ggomg.imageaggregator.domain.port.out.OcrResultSavePort
+import com.ggomg.imageaggregator.application.port.`in`.OcrResultMessageHandler
+import com.ggomg.imageaggregator.application.port.out.OcrResultSavePort
 import org.springframework.stereotype.Service
 
 

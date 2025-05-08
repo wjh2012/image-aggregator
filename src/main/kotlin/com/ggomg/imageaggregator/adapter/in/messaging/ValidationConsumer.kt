@@ -1,6 +1,6 @@
 package com.ggomg.imageaggregator.adapter.`in`.messaging
 
-import com.ggomg.imageaggregator.domain.port.`in`.ValidationResultMessageHandler
+import com.ggomg.imageaggregator.application.port.`in`.ValidationResultMessageHandler
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.stereotype.Component
 
