@@ -1,30 +1,10 @@
 spring:
-  application:
-    name:
-      image-aggregator
-
-  datasource:
-    driver-class-name: org.h2.Driver
-    #    url: jdbc:h2:mem:ggomg
-    url: jdbc:h2:file:./ggomgdb;AUTO_SERVER=TRUE
-    username: sa
-    password:
-  
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-        highlight_sql: true
-        generate_statistics: true
-        use_sql_comments: true
-  
-  h2:
-    console:
-      enabled: true
-  
   config:
     import:
       - application-message.yml
+      - application-postgresql.yml
+  #      - application-h2.yml
+  
+  application:
+    name:
+      image-aggregator
