@@ -4,11 +4,29 @@ import org.springframework.amqp.core.Binding
 import org.springframework.amqp.core.BindingBuilder
 import org.springframework.amqp.core.DirectExchange
 import org.springframework.amqp.core.Queue
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory
+import org.springframework.amqp.rabbit.connection.ConnectionFactory
+import org.springframework.amqp.rabbit.listener.RabbitListenerContainerFactory
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
+
 @Configuration
 class RabbitMQConfig(private val imageQueueProperties: ImageQueueProperties) {
+
+    @Bean
+    fun batchListenerContainerFactory(connectionFactory: ConnectionFactory): RabbitListenerContainerFactory<*> {
+        val factory = SimpleRabbitListenerContainerFactory()
+        factory.setConnectionFactory(connectionFactory)
+
+        factory.setBatchListener(true)
+        factory.setConsumerBatchEnabled(true)
+        factory.setBatchSize(10)
+        factory.setReceiveTimeout(1000L)
+        factory.setPrefetchCount(10)
+
+        return factory
+    }
 
     @Bean
     fun ocrQueue(): Queue {
