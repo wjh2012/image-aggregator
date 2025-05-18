@@ -18,3 +18,7 @@ services:
       exchange: image.response
       queue: image.validation.response.queue
       routing-key: image.validation.response
+    thumbnail:
+      exchange: image.response
+      queue: image.thumbnail.response.queue
+      routing-key: image.thumbnail.response

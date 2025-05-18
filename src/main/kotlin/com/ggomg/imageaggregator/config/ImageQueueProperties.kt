@@ -7,10 +7,11 @@ import org.springframework.context.annotation.Configuration
 @ConfigurationProperties(prefix = "services.image")
 class ImageQueueProperties {
 
-    var ocr: QueueDefinition= QueueDefinition()
-    var validation: QueueDefinition= QueueDefinition()
-   
-    class QueueDefinition  {
+    var ocr: QueueDefinition = QueueDefinition()
+    var validation: QueueDefinition = QueueDefinition()
+    var thumbnail: QueueDefinition = QueueDefinition()
+
+    class QueueDefinition {
         lateinit var exchange: String
         lateinit var queue: String
         lateinit var routingKey: String

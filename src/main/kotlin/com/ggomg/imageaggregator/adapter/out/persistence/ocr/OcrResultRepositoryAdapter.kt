@@ -5,7 +5,7 @@ import com.ggomg.imageaggregator.application.port.out.OcrResultSavePort
 import org.springframework.stereotype.Component
 
 @Component
-class OcrResultResultRepositoryAdapter(private val repository: OcrResultRepository) :
+class OcrResultRepositoryAdapter(private val repository: OcrResultRepository) :
     OcrResultSavePort {
     override fun save(result: OcrResult) {
         val entity = OcrResultEntity.from(result)

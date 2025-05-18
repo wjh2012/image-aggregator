@@ -61,4 +61,21 @@ class RabbitMQConfig(private val imageQueueProperties: ImageQueueProperties) {
             .to(validationExchange())
             .with(imageQueueProperties.validation.routingKey)
     }
+
+    @Bean
+    fun thumbnailQueue(): Queue {
+        return Queue(imageQueueProperties.thumbnail.queue, true)
+    }
+
+    @Bean
+    fun thumbnailExchange(): DirectExchange {
+        return DirectExchange(imageQueueProperties.thumbnail.exchange)
+    }
+
+    @Bean
+    fun thumbnailBindingQueue(): Binding {
+        return BindingBuilder.bind(thumbnailQueue())
+            .to(thumbnailExchange())
+            .with(imageQueueProperties.thumbnail.routingKey)
+    }
 }

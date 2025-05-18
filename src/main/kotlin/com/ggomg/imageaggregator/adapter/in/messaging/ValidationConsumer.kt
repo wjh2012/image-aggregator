@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component
 
 @Component
 class ValidationConsumer(
-    private val ValidationResultMessageHandler: ValidationResultMessageHandler,
+    private val validationResultMessageHandler: ValidationResultMessageHandler,
 ) {
 
     @RabbitListener(queues = ["\${services.image.validation.queue}"])
     fun handleValidationMessage(message: String) {
         println("[Validation] 수신 메시지: $message")
-        ValidationResultMessageHandler.handleMessage(message)
+        validationResultMessageHandler.handleMessage(message)
     }
 }
