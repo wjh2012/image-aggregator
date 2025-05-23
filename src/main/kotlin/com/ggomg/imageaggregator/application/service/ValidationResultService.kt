@@ -1,25 +1,22 @@
 package com.ggomg.imageaggregator.application.service
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.ggomg.imageaggregator.adapter.`in`.dto.ValidationResultDto
 import com.ggomg.imageaggregator.domain.model.ValidationResult
-import com.ggomg.imageaggregator.application.port.`in`.ValidationResultMessageHandler
-import com.ggomg.imageaggregator.application.port.out.ValidationResultSavePort
+import com.ggomg.imageaggregator.application.port.inbound.ValidationResultMessageHandler
+import com.ggomg.imageaggregator.application.port.inbound.command.ValidationResultCommand
+import com.ggomg.imageaggregator.application.port.outbound.ValidationResultSavePort
 import org.springframework.stereotype.Service
 
 
 @Service
 class ValidationResultService(
     private val validationResultSavePort: ValidationResultSavePort,
-    private val objectMapper: ObjectMapper
 ) : ValidationResultMessageHandler {
-
-    override fun handleMessage(message: String) {
-        val dto = objectMapper.readValue(message, ValidationResultDto::class.java)
-
+    override fun handleMessage(command: ValidationResultCommand) {
         val result = ValidationResult(
-            gid = dto.gid,
-            is_blank = dto.validation_result.is_blank
+            gid = command.gid,
+            status = command.status,
+            completedAt = command.completedAt,
+            isBlank = command.validationResults,
         )
         validationResultSavePort.save(result)
     }

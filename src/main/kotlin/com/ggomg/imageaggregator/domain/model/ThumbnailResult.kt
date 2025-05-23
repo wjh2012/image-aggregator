@@ -2,5 +2,8 @@ package com.ggomg.imageaggregator.domain.model
 
 data class ThumbnailResult(
     val gid: String,
-    val thumbnailCreated: Boolean
+    val status: String,
+    val createdAt: String,
+    val bucket: String,
+    val thumbnailObjectKey: String
 )
