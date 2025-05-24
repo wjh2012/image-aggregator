@@ -17,14 +17,14 @@ class ValidationResultEntity(
 
     var gid: String? = null,
 
-    var is_blank: Boolean? = null
+    var isBlank: Boolean? = null
 
 ) : BaseEntity() {
     companion object {
         fun from(domain: ValidationResult): ValidationResultEntity = ValidationResultEntity(
             id = Generators.timeBasedEpochGenerator().generate(),
             gid = domain.gid,
-            is_blank = domain.is_blank
+            isBlank = domain.isBlank
         )
     }
 }

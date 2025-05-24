@@ -1,5 +1,5 @@
 package com.ggomg.imageaggregator.application.port.inbound.command
 
-data class ValidationResultCommand(
-    val isBlank: Boolean,
+data class OcrResultCommand(
+    val text: List<String>?
 ) : CommandData

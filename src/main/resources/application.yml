@@ -2,8 +2,8 @@ spring:
   config:
     import:
       - application-message.yml
-      - application-postgresql.yml
-  #      - application-h2.yml
+      #      - application-postgresql.yml
+      - application-h2.yml
   
   application:
     name:

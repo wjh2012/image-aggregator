@@ -17,14 +17,20 @@ class ThumbnailResultEntity(
 
     var gid: String? = null,
 
-    var thumbnailCreated: Boolean = false
+    var completedAt: String? = null,
+
+    var bucket: String? = null,
+
+    var thumbnailObjectKey: String? = null
 
 ) : BaseEntity() {
     companion object {
         fun from(domain: ThumbnailResult): ThumbnailResultEntity = ThumbnailResultEntity(
             id = Generators.timeBasedEpochGenerator().generate(),
             gid = domain.gid,
-            thumbnailCreated = domain.thumbnailCreated
+            completedAt = domain.completedAt,
+            bucket = domain.bucket,
+            thumbnailObjectKey = domain.thumbnailObjectKey
         )
     }
 }
