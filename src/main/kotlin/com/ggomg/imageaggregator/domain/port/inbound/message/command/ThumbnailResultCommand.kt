@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.application.port.inbound.command
+package com.ggomg.imageaggregator.domain.port.inbound.message.command
 
 data class ThumbnailResultCommand(
     val bucket: String,

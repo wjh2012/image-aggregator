@@ -1,9 +1,9 @@
-package com.ggomg.imageaggregator.application.service
+package com.ggomg.imageaggregator.application
 
-import com.ggomg.imageaggregator.application.port.inbound.ThumbnailResultMessageHandler
-import com.ggomg.imageaggregator.application.port.inbound.command.ServiceCommand
-import com.ggomg.imageaggregator.application.port.inbound.command.ThumbnailResultCommand
-import com.ggomg.imageaggregator.application.port.outbound.ThumbnailResultSavePort
+import com.ggomg.imageaggregator.domain.port.inbound.message.ThumbnailResultMessageHandler
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ThumbnailResultCommand
+import com.ggomg.imageaggregator.domain.port.outbound.ThumbnailResultSavePort
 import com.ggomg.imageaggregator.domain.model.ThumbnailResult
 import org.springframework.stereotype.Service
 

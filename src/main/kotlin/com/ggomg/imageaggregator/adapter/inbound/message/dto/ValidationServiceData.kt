@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.adapter.inbound.message
+package com.ggomg.imageaggregator.adapter.inbound.message.dto
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

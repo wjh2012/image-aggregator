@@ -1,7 +1,7 @@
 package com.ggomg.imageaggregator.adapter.outbound.persistence.ocr
 
 import com.ggomg.imageaggregator.domain.model.OcrResult
-import com.ggomg.imageaggregator.application.port.outbound.OcrResultSavePort
+import com.ggomg.imageaggregator.domain.port.outbound.OcrResultSavePort
 import org.springframework.stereotype.Component
 
 @Component

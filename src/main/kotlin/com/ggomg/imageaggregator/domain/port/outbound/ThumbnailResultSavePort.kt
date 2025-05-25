@@ -1,4 +1,4 @@
-package com.ggomg.imageaggregator.application.port.outbound
+package com.ggomg.imageaggregator.domain.port.outbound
 
 import com.ggomg.imageaggregator.domain.model.ThumbnailResult
 

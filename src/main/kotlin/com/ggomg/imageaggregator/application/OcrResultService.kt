@@ -1,10 +1,10 @@
-package com.ggomg.imageaggregator.application.service
+package com.ggomg.imageaggregator.application
 
 import com.ggomg.imageaggregator.domain.model.OcrResult
-import com.ggomg.imageaggregator.application.port.inbound.OcrResultMessageHandler
-import com.ggomg.imageaggregator.application.port.inbound.command.OcrResultCommand
-import com.ggomg.imageaggregator.application.port.inbound.command.ServiceCommand
-import com.ggomg.imageaggregator.application.port.outbound.OcrResultSavePort
+import com.ggomg.imageaggregator.domain.port.inbound.message.OcrResultMessageHandler
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.OcrResultCommand
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
+import com.ggomg.imageaggregator.domain.port.outbound.OcrResultSavePort
 import org.springframework.stereotype.Service
 
 

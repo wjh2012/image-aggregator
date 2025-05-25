@@ -1,6 +1,6 @@
 package com.ggomg.imageaggregator.adapter.outbound.persistence.thumbnail
 
-import com.ggomg.imageaggregator.application.port.outbound.ThumbnailResultSavePort
+import com.ggomg.imageaggregator.domain.port.outbound.ThumbnailResultSavePort
 import com.ggomg.imageaggregator.domain.model.ThumbnailResult
 import org.springframework.stereotype.Component
 

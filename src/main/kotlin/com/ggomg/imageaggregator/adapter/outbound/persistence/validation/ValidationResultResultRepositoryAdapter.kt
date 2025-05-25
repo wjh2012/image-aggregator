@@ -1,7 +1,7 @@
 package com.ggomg.imageaggregator.adapter.outbound.persistence.validation
 
 import com.ggomg.imageaggregator.domain.model.ValidationResult
-import com.ggomg.imageaggregator.application.port.outbound.ValidationResultSavePort
+import com.ggomg.imageaggregator.domain.port.outbound.ValidationResultSavePort
 import org.springframework.stereotype.Component
 
 @Component

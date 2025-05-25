@@ -1,13 +1,13 @@
-package com.ggomg.imageaggregator.adapter.inbound.messaging
+package com.ggomg.imageaggregator.adapter.inbound.message.consumer
 
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.ggomg.imageaggregator.adapter.inbound.message.MessageBody
-import com.ggomg.imageaggregator.adapter.inbound.message.MessageHeader
-import com.ggomg.imageaggregator.adapter.inbound.message.ThumbnailServiceData
-import com.ggomg.imageaggregator.application.port.inbound.ThumbnailResultMessageHandler
-import com.ggomg.imageaggregator.application.port.inbound.command.ServiceCommand
-import com.ggomg.imageaggregator.application.port.inbound.command.ThumbnailResultCommand
+import com.ggomg.imageaggregator.adapter.inbound.message.dto.MessageBody
+import com.ggomg.imageaggregator.adapter.inbound.message.dto.MessageHeader
+import com.ggomg.imageaggregator.adapter.inbound.message.dto.ThumbnailServiceData
+import com.ggomg.imageaggregator.domain.port.inbound.message.ThumbnailResultMessageHandler
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ThumbnailResultCommand
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.messaging.handler.annotation.Headers
 import org.springframework.stereotype.Component

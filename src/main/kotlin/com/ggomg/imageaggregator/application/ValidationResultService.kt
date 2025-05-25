@@ -1,10 +1,10 @@
-package com.ggomg.imageaggregator.application.service
+package com.ggomg.imageaggregator.application
 
 import com.ggomg.imageaggregator.domain.model.ValidationResult
-import com.ggomg.imageaggregator.application.port.inbound.ValidationResultMessageHandler
-import com.ggomg.imageaggregator.application.port.inbound.command.ServiceCommand
-import com.ggomg.imageaggregator.application.port.inbound.command.ValidationResultCommand
-import com.ggomg.imageaggregator.application.port.outbound.ValidationResultSavePort
+import com.ggomg.imageaggregator.domain.port.inbound.message.ValidationResultMessageHandler
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
+import com.ggomg.imageaggregator.domain.port.inbound.message.command.ValidationResultCommand
+import com.ggomg.imageaggregator.domain.port.outbound.ValidationResultSavePort
 import org.springframework.stereotype.Service
 
 
