@@ -1,5 +1,5 @@
 package com.ggomg.imageaggregator.adapter.inbound.message.dto
 
-data class OcrServiceData(
+data class OcrServicePayload(
     val text: List<String>?,
 ) : ServicePayload

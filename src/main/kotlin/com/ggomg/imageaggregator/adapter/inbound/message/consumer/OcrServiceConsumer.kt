@@ -4,8 +4,8 @@ import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.ggomg.imageaggregator.adapter.inbound.message.dto.MessageHeader
 import com.ggomg.imageaggregator.adapter.inbound.message.dto.MessageBody
-import com.ggomg.imageaggregator.adapter.inbound.message.dto.OcrServiceData
-import com.ggomg.imageaggregator.domain.port.inbound.message.OcrResultMessageHandler
+import com.ggomg.imageaggregator.adapter.inbound.message.dto.OcrServicePayload
+import com.ggomg.imageaggregator.domain.port.inbound.message.SaveOcrResultUseCase
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.OcrResultCommand
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
 import org.springframework.amqp.rabbit.annotation.RabbitListener
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class OcrServiceConsumer(
-    private val ocrMessageHandler: OcrResultMessageHandler,
+    private val ocrMessageHandler: SaveOcrResultUseCase,
     private val objectMapper: ObjectMapper
 ) {
     @RabbitListener(queues = ["\${services.image.ocr.queue}"])
@@ -23,9 +23,9 @@ class OcrServiceConsumer(
         body: String
     ) {
         val messageHeader = objectMapper.convertValue(headers, MessageHeader::class.java)
-        val messageBody: MessageBody<OcrServiceData> = objectMapper.readValue(
+        val messageBody: MessageBody<OcrServicePayload> = objectMapper.readValue(
             body,
-            object : TypeReference<MessageBody<OcrServiceData>>() {}
+            object : TypeReference<MessageBody<OcrServicePayload>>() {}
         )
         println("[OCR] 수신 메시지: $messageBody")
 
@@ -36,6 +36,6 @@ class OcrServiceConsumer(
             data = OcrResultCommand(text = messageBody.payload.text),
         )
         println("[OCR] AMQP 헤더: $messageHeader")
-        ocrMessageHandler.handleMessage(command)
+        ocrMessageHandler.saveOcrResult(command)
     }
 }

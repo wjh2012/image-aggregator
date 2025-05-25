@@ -1,6 +1,6 @@
 package com.ggomg.imageaggregator.domain.model
 
-data class ImageProcessResult(
+data class ImageProcessingResult(
     val gid: String,
     var ocrResult: OcrResult? = null,
     var validationResult: ValidationResult? = null,

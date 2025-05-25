@@ -1,6 +1,6 @@
 package com.ggomg.imageaggregator.application
 
-import com.ggomg.imageaggregator.domain.port.inbound.message.ThumbnailResultMessageHandler
+import com.ggomg.imageaggregator.domain.port.inbound.message.SaveThumbnailResultUseCase
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ThumbnailResultCommand
 import com.ggomg.imageaggregator.domain.port.outbound.ThumbnailResultSavePort
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service
 
 
 @Service
-class ThumbnailResultService(
+class SaveThumbnailResultService(
     private val thumbnailResultSavePort: ThumbnailResultSavePort,
-) : ThumbnailResultMessageHandler {
-    override fun handleMessage(command: ServiceCommand<ThumbnailResultCommand>) {
+) : SaveThumbnailResultUseCase {
+    override fun saveThumbnailResult(command: ServiceCommand<ThumbnailResultCommand>) {
         val result = ThumbnailResult(
             gid = command.gid,
             status = command.status,
