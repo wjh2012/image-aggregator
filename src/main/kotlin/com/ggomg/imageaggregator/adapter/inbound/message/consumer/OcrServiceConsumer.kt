@@ -11,6 +11,7 @@ import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceComm
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.messaging.handler.annotation.Headers
 import org.springframework.stereotype.Component
+import java.time.OffsetDateTime
 
 @Component
 class OcrServiceConsumer(
@@ -32,7 +33,9 @@ class OcrServiceConsumer(
         val command = ServiceCommand(
             gid = messageBody.gid,
             status = messageBody.status,
-            completedAt = messageBody.completedAt,
+            completedAt = OffsetDateTime
+                .parse(messageBody.completedAt)
+                .toLocalDateTime(),
             data = OcrResultCommand(text = messageBody.payload.text),
         )
         println("[OCR] AMQP 헤더: $messageHeader")

@@ -1,6 +1,7 @@
 package com.ggomg.imageaggregator.application
 
 import com.ggomg.imageaggregator.domain.model.OcrResult
+import com.ggomg.imageaggregator.domain.model.Status
 import com.ggomg.imageaggregator.domain.port.inbound.message.SaveOcrResultUseCase
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.OcrResultCommand
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
@@ -15,7 +16,8 @@ class SaveOcrResultService(
     override fun saveOcrResult(command: ServiceCommand<OcrResultCommand>) {
         val result = OcrResult(
             gid = command.gid,
-            status = command.status,
+            status = Status.fromString(command.status)
+                ?: throw IllegalArgumentException("Invalid status: ${command.status}"),
             completedAt = command.completedAt,
             text = command.data.text?.joinToString("\n") ?: ""
         )

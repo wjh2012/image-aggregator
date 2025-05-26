@@ -11,6 +11,7 @@ import com.ggomg.imageaggregator.domain.port.inbound.message.command.ValidationR
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.messaging.handler.annotation.Headers
 import org.springframework.stereotype.Component
+import java.time.OffsetDateTime
 
 @Component
 class ValidationServiceConsumer(
@@ -32,7 +33,9 @@ class ValidationServiceConsumer(
         val command = ServiceCommand(
             gid = messageBody.gid,
             status = messageBody.status,
-            completedAt = messageBody.completedAt,
+            completedAt = OffsetDateTime
+                .parse(messageBody.completedAt)
+                .toLocalDateTime(),
             data = ValidationResultCommand(
                 isBlank = messageBody.payload.isBlank,
             ),

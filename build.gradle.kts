@@ -25,13 +25,20 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.springframework.boot:spring-boot-configuration-processor")
     implementation("org.projectlombok:lombok")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     "developmentOnly"("org.springframework.boot:spring-boot-devtools")
+
+    // swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5")
+
+    // uuid
     implementation("com.fasterxml.uuid:java-uuid-generator:5.1.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("com.fasterxml.jackson.core:jackson-databind")
 
+    // persistence
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.postgresql:postgresql")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.amqp:spring-rabbit-test")

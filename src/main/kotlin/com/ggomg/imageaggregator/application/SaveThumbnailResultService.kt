@@ -1,5 +1,6 @@
 package com.ggomg.imageaggregator.application
 
+import com.ggomg.imageaggregator.domain.model.Status
 import com.ggomg.imageaggregator.domain.port.inbound.message.SaveThumbnailResultUseCase
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ServiceCommand
 import com.ggomg.imageaggregator.domain.port.inbound.message.command.ThumbnailResultCommand
@@ -15,7 +16,8 @@ class SaveThumbnailResultService(
     override fun saveThumbnailResult(command: ServiceCommand<ThumbnailResultCommand>) {
         val result = ThumbnailResult(
             gid = command.gid,
-            status = command.status,
+            status = Status.fromString(command.status)
+                ?: throw IllegalArgumentException("Invalid status: ${command.status}"),
             completedAt = command.completedAt,
             bucket = command.data.bucket,
             thumbnailObjectKey = command.data.thumbnailObjectKey,
